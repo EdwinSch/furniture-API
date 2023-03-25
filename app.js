@@ -29,8 +29,8 @@ const displayProducts = (list) => {
       const { url: img } = product.fields.image[0];
       // Convert price (from cents)
       const formatPrice = price / 100;
-      // Return product item structure
-      return `<a href="./product.html" class="single-product">
+      // Return product item structure and insert query params
+      return `<a href="./product.html?id=${id}" class="single-product">
     <img src="${img}" alt="${name}" class="single-product-img img" />
     <footer>
       <h5 class="name">${name}</h5>
@@ -39,6 +39,7 @@ const displayProducts = (list) => {
   </a>`;
     })
     .join("");
+  // Push products to DOM
   productsDOM.innerHTML = `<div class="products-container">
     ${productList}
     </div>`;
