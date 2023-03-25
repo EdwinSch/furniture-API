@@ -1,8 +1,7 @@
 /* ---- TARGETS && INITIALIZERS ---- */
-const url = "https://course-api.co/javascript-store-products";
+const url = "https://course-api.com/javascript-store-products";
 const productsDOM = getElement(".products-center");
 
-/* ---- SCRIPT ---- */
 /* ---- FUNCTIONS ---- */
 
 // Fetch products function
