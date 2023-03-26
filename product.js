@@ -25,6 +25,12 @@ const displayProduct = (product) => {
   // Destructure from JSON
   const { company, colors, description, name, price } = product.fields;
   const { url: img } = product.fields.image[0];
+  // Map colors array from JSON
+  const colorsList = colors
+    .map((color) => {
+      return `<span class="product-color" style="background:${color}"></span>`;
+    })
+    .join("");
   // Convert price (from cents)
   const formatPrice = price / 100;
   // Set HTML page title
@@ -38,7 +44,7 @@ const displayProduct = (product) => {
     <h5>${company}</h5>
     <span>&euro; ${formatPrice}</span>
     <div class="colors">
-      <span class="product-color"></span>
+      ${colorsList}
     </div>
     <p>${description}</p>
     <button type="button" class="btn">add to cart</button>
