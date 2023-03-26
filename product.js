@@ -20,8 +20,30 @@ const fetchProduct = async () => {
   }
 };
 
+// Display product function
 const displayProduct = (product) => {
-  console.log(product);
+  // Destructure from JSON
+  const { company, colors, description, name, price } = product.fields;
+  const { url: img } = product.fields.image[0];
+  // Convert price (from cents)
+  const formatPrice = price / 100;
+  // Set HTML page title
+  document.title = name.toUpperCase();
+
+  // Render product
+  productDOM.innerHTML = `<div class="product-wrapper">
+  <img src="${img}" alt="${name}" class="img" />
+  <div class="product-info">
+    <h3>${name}</h3>
+    <h5>${company}</h5>
+    <span>&euro; ${formatPrice}</span>
+    <div class="colors">
+      <span class="product-color"></span>
+    </div>
+    <p>${description}</p>
+    <button type="button" class="btn">add to cart</button>
+  </div>
+</div>`;
 };
 
 const start = async () => {

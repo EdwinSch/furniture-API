@@ -34,7 +34,7 @@ const displayProducts = (list) => {
     <img src="${img}" alt="${name}" class="single-product-img img" />
     <footer>
       <h5 class="name">${name}</h5>
-      <span class="price">&dollar;${formatPrice}</span>
+      <span class="price">&euro; ${formatPrice}</span>
     </footer>
   </a>`;
     })
